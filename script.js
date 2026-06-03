@@ -1,4 +1,5 @@
-//const players = require('./players.json');
+const obj = require('./players.json');
+
 
 function rolarDado (qtd) {
     let i = 0;
@@ -16,4 +17,16 @@ function rolarDado (qtd) {
     console.log("resultado = ",resultado);
 }
 
-rolarDado(2)
+//rolarDado(2)
+
+
+function exibirPersonagem () {
+    
+    for (let player of obj.players) {
+        console.log(`Nome: ${player.nome}`);
+        console.log(`Vida: ${player.hp}`)
+    }
+}
+
+exibirPersonagem()
+

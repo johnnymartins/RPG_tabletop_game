@@ -1,32 +1,28 @@
 {   
-    "player1":
-    {
+    "players": [
+        {
         "nome": "Reginald",
         "hp": 30,
         "defesa": 16,
         "bonus_ataque": 5,
         "dado_dano": 8,
-        "donus_dano": 3
-
-    },
-    "player2":
-    {
+        "bonus_dano": 3
+        },
+        {
         "nome": "Lyra",
         "hp": 22,
         "defesa": 14,
         "bonus_ataque": 6,
         "dado_dano": 6,
-        "donus_dano": 2
-
-    },
-    "player3":
-    {
+        "bonus_dano": 2
+        },
+        {
         "nome": "Zaphyr",
         "hp": 18,
         "defesa": 12,
         "bonus_ataque": 4,
         "dado_dano": 10,
-        "donus_dano": 1
-
-    }
+        "bonus_dano": 1
+        }
+    ]
 }
