@@ -22,10 +22,10 @@ function rolarDado (qtd) {
 
 function exibirPersonagem () {
     
-    for (let player of obj.players) {
+    obj.players.forEach(player => {
         console.log(`Nome: ${player.nome}`);
-        console.log(`Vida: ${player.hp}`)
-    }
+        console.log(`Vida: ${player.hp}`);
+    })
 }
 
 exibirPersonagem()
