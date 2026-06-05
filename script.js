@@ -69,10 +69,10 @@ function testarAcerto(atacante, defensor) { //TODO: tornar genérica – remover
     console.log(`Ataque: bônus(${bonusAtaque}) + dado(${resultadoDado}) = ${ataqueTotal}\nDefesa: ${defesa}`)
 
     if (ataqueTotal >= defesa) {
-        console.log("Acertou, role o dano.");
+        console.log(`${atacante.nome} acertou, role o dano.`);
         calcularDano(player1);
     } else {
-        console.log("Ataque falhou.")
+        console.log(`${atacante.nome} errou.`)
     }
 }
 
@@ -87,10 +87,22 @@ function calcularDano(atacante) {
     console.log("------VAMOS VER QUAL FOI O DANO------");
     
     console.log(`Dano: bônus(${bonusDano}) + dado(${resultadoDado}) = ${danoTotal}`)
+    
+    aplicarDano(player2, danoTotal);
 
     return danoTotal;
+
 }
 
+
+function aplicarDano(defensor, dano) {
+    let hp = defensor.hp;
+
+    let calculaHp = hp - dano
+    defensor[hp] = calculaHp;
+
+    console.log(`${defensor.nome} perdeu ${dano} HP e ficou com ${calculaHp}.`)
+}
 
 let player1 = obj.players[0];
 let player2 = obj.players[1];
