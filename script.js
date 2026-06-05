@@ -1,8 +1,7 @@
 const obj = require('./players.json');
 
 
-
-// function rolarDado (qtd) {
+// function rolarDado (qtd) { //forma anterior de rolar o dado
 //     let i = 0;
 //     let valor;
 //     let resultado = 0;
@@ -32,11 +31,10 @@ function rolarDado (qtd, faces) {
         resultado += valor
         
     } while (i < qtd);
-    if (valor == faces) {
-        console.log(`${qtd}D${faces} = ${resultado}`);
-        console.log("CRÍTICO!")
+    if (valor == faces && faces == 20) {
+        console.log(`${qtd}D${faces} = ${resultado}\nCRÍTICO!`);
     } else {
-        console.log(`${qtd}D${faces} = ${resultado}`);
+        console.log(`${qtd}D${faces} = ${resultado}\n`);
     }
     return resultado;
 }
@@ -55,19 +53,6 @@ function exibirPersonagem() {
 //exibirPersonagem()
 
 
-
-// const readline = require("readline").createInterface({
-//     input: process.stdin,
-//     output: process.stdout
-// })
-
-// readline.question(`Escolha seu personagem: `, playerEscolhido => {
-//     console.log(playerEscolhido);
-// })
-
-// let playerEscolhido = prompt("Escolha seu personagem: ", exibirPersonagem())
-
-
 function testarAcerto(atacante, defensor) { //TODO: tornar genérica – remover referência fixa a obj.players[0] e [1] quando tiver seletor de personagens.
     let resultadoDado = rolarDado(1,20);
 
@@ -79,19 +64,35 @@ function testarAcerto(atacante, defensor) { //TODO: tornar genérica – remover
 
     let ataqueTotal = bonusAtaque + resultadoDado;
 
+    console.log("---VAMOS TESTAR SE O ATAQUE ACERTA---");
+
     console.log(`Ataque: bônus(${bonusAtaque}) + dado(${resultadoDado}) = ${ataqueTotal}\nDefesa: ${defesa}`)
 
     if (ataqueTotal >= defesa) {
         console.log("Acertou, role o dano.");
+        calcularDano(player1);
     } else {
         console.log("Ataque falhou.")
     }
 }
 
-let player1 = obj.players[0].nome;
-let player2 = obj.players[1].nome;
+
+function calcularDano(atacante) {
+    let resultadoDado = rolarDado(1,atacante.dado_dano);
+    
+    let bonusDano = atacante.bonus_dano;
+    
+    let danoTotal = bonusDano + resultadoDado
+
+    console.log("------VAMOS VER QUAL FOI O DANO------");
+    
+    console.log(`Dano: bônus(${bonusDano}) + dado(${resultadoDado}) = ${danoTotal}`)
+
+    return danoTotal;
+}
 
 
-
+let player1 = obj.players[0];
+let player2 = obj.players[1];
 
 testarAcerto(player1, player2);
