@@ -40,7 +40,7 @@ Este é um simulador de combate para jogos de RPG de mesa. O objetivo é permiti
 🔜 Próximos passos
 
    - Adicionar sistema de magias e efeitos especiais
-   - Salvar histórico de partidas no ```localStorage
+   - Salvar histórico de partidas no ```javascript localStorage
    - Versão multiplayer (dois dispositivos)
 
 📫 Contato
