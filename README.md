@@ -28,7 +28,7 @@ Este é um simulador de combate para jogos de RPG de mesa. O objetivo é permiti
 
 2. Abra o arquivo index.html em qualquer navegador.
 
-3. Ou acesse a demonstração (se disponível): [Link do GitHub Pages – coloque aqui se tiver]
+3. Ou acesse a demonstração: [em breve...]
 
 📚 O que aprendi
 
@@ -45,4 +45,4 @@ Este é um simulador de combate para jogos de RPG de mesa. O objetivo é permiti
 
 📫 Contato
 
-Fique à vontade para abrir uma issue ou me chamar no LinkedIn para trocar ideias!
+Fique à vontade para abrir uma issue ou me chamar no [LinkedIn](https://www.linkedin.com/in/jonathan-omartins/) para trocar ideias!
